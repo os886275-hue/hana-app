@@ -1,0 +1,22 @@
+# Hana web app -- text -> TTS -> Unreal (Speech2Face) -> Pixel Streaming
+#
+# torch is NOT pinned to a CUDA build here. Install the wheel that matches the
+# target machine's GPU/driver FIRST, e.g. for CUDA 13:
+#   pip install torch --index-url https://download.pytorch.org/whl/cu130
+# then: pip install -r requirements.txt
+# CPU-only torch works but TTS synthesis is very slow.
+
+Flask==3.0.3
+python-dotenv==1.2.2
+requests==2.34.2
+soundfile==0.14.0
+numpy==1.26.4
+
+# TTS
+torch>=2.4
+transformers>=4.44
+accelerate>=1.0
+huggingface_hub>=0.25
+safetensors>=0.4
+omnivoice==0.2.1
+VoiceTut-TTS==0.1.1
